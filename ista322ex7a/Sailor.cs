@@ -4,12 +4,12 @@ using System.Text;
 
 namespace EX7A
 {
-    class Marine : ActiveDuty
+    class Sailor : ActiveDuty
     {
-        internal Marine(int dodId, string name, string jobTitle, payGrade rank)
+        internal Sailor(int dodId, string name, string jobTitle, payGrade rank)
         {
             this.DODiD = dodId;
-            this.name = name;
+            this.firstname = name;
             getPaygrade = rank;
             this.jobTitle = jobTitle;
         }

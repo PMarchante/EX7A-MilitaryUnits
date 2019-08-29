@@ -9,7 +9,7 @@ namespace EX7A
         internal Soldier(int dodId, string name, string jobTitle, payGrade rank)
         {
             this.DODiD = dodId;
-            this.name = name;
+            this.firstname = name;
             getPaygrade = rank;
             this.jobTitle = jobTitle;
         }

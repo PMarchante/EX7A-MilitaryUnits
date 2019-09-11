@@ -1,5 +1,6 @@
 ﻿using System;
 
+
 namespace BisectionAlogrithim
 {
     class Program
@@ -7,18 +8,17 @@ namespace BisectionAlogrithim
         static void Main(string[] args)
         {
             Algo algo = new Algo();
-            bool truther = true;
-            int input;
-            string str;
-            int[] list = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-            while(truther)
+            Var vars = new Var();
+            
+
+            while(vars.truth)
             {
                 Console.Write("Enter a number between 1 and 10: ");
                 try
                 {
-                    input = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine($"The value searched for, {input}, has been found at index {algo.Finder(input, list)}");
-                    truther = false;
+                    vars.input = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine($"The value searched for, {vars.input}, has been found at index {algo.Finder(vars.input, vars.list, vars)}");
+                    vars.truth = false;
                 }
                 catch (FormatException)
                 {
@@ -26,11 +26,13 @@ namespace BisectionAlogrithim
                 }
                 
             }
-            //HvsC h = new HvsC();
-            //h.Human();
-
+            
             CvsH c = new CvsH();
-            c.ComputerGuess();
+            c.ComputerGuess(vars);
+
+            //commented out because it takes forever to run through
+            //HvsC h = new HvsC();
+            //h.Human(vars);
         }
     }
 }

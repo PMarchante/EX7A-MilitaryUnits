@@ -6,38 +6,39 @@ namespace BisectionAlogrithim
 {
     class CvsH
     {
-        public void ComputerGuess()
+        public void ComputerGuess(Var vars)
         {
-            int start = 0;
-            int end = 100;
-            int mid = (start + end) / 2;
-            int hum = 0;
+
+            vars.start = 0;
+            vars.end = 100;
+            vars.mid = (vars.start + vars.end) / 2;
+            vars.hum = 0;
             
             try
             {
                 Console.Write("Enter a number between 1 and 100: ");
-                hum = Convert.ToInt32(Console.ReadLine());
+                vars.hum = Convert.ToInt32(Console.ReadLine());
             }
             catch (FormatException)
             {
                 Console.Write("Invalid entry!");
             }
-            while (mid != hum)
+            while (vars.mid != vars.hum)
             { 
-                    if(mid > hum)
+                    if(vars.mid > vars.hum)
                     {
-                        Console.WriteLine($"The computers guess of {mid} was to high");
-                        end = mid;
-                        mid = (start + end) / 2;
+                        Console.WriteLine($"The computers guess of {vars.mid} was to high");
+                        vars.end = vars.mid;
+                        vars.mid = (vars.start + vars.end) / 2;
                     }
-                    else if(mid < hum)
+                    else if(vars.mid < vars.hum)
                     {
-                        Console.WriteLine($"The computers guess of {mid} was to low");
-                        start = mid;
-                        mid = (start + end) / 2;
+                        Console.WriteLine($"The computers guess of {vars.mid} was to low");
+                        vars.start = vars.mid;
+                        vars.mid = (vars.start + vars.end) / 2;
                     }
 
-            }Console.WriteLine($"The computers guess of {mid} was exactly right!");
+            }Console.WriteLine($"The computers guess of {vars.mid} was exactly right!");
         }
     }
 }
